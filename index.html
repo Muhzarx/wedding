@@ -3,155 +3,162 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Pernikahan Hafizd & Najihah</title>
+  <title>Undangan Pernikahan Hafizd & Najihah</title>
+  <link href="https://fonts.googleapis.com/css2?family=Great+Vibes&family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
   <style>
-    @import url('https://fonts.googleapis.com/css2?family=Great+Vibes&family=Open+Sans:wght@400;600&display=swap');
-
     * {
       margin: 0;
       padding: 0;
       box-sizing: border-box;
-      scroll-behavior: smooth;
+      font-family: 'Poppins', sans-serif;
     }
     body {
-      font-family: 'Open Sans', sans-serif;
-      background: linear-gradient(to bottom, #f8f9fa, #fff);
-      color: #333;
-      position: relative;
+      background: linear-gradient(rgba(255,255,255,0.9), rgba(255,255,255,0.9)), url('https://i.ibb.co/vxjz1sW/bg-love.jpg') no-repeat center center fixed;
+      background-size: cover;
       overflow-x: hidden;
+      color: #333;
     }
     header {
       text-align: center;
-      padding: 100px 20px;
-      background: rgba(255, 255, 255, 0.8);
-      position: relative;
+      padding: 100px 20px 50px;
     }
     header h1 {
       font-family: 'Great Vibes', cursive;
       font-size: 3em;
-      color: #c59fc9;
+      color: #b30059;
+      margin-bottom: 10px;
     }
     header p {
-      margin-top: 10px;
-      font-size: 1.1em;
+      font-size: 1.2em;
     }
     .countdown {
-      margin-top: 40px;
-      font-size: 1.5em;
-      color: #555;
+      display: flex;
+      justify-content: center;
+      gap: 20px;
+      margin: 40px 0;
     }
-    section {
-      padding: 60px 20px;
+    .countdown div {
+      background: #fff;
+      padding: 20px;
+      border-radius: 15px;
+      box-shadow: 0 5px 15px rgba(0,0,0,0.2);
       text-align: center;
     }
-    .galeri img {
-      max-width: 200px;
-      margin: 10px;
-      border-radius: 15px;
-      box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+    .countdown span {
+      display: block;
+      font-size: 2em;
+      color: #b30059;
     }
-    iframe {
-      width: 100%;
-      max-width: 600px;
+    .section {
+      padding: 50px 20px;
+      text-align: center;
+    }
+    .section h2 {
+      font-size: 2em;
+      margin-bottom: 20px;
+    }
+    .map {
+      max-width: 100%;
       height: 300px;
-      border: 0;
-      border-radius: 15px;
       margin-top: 20px;
     }
-    .background-anim {
-      position: fixed;
-      top: 0;
-      left: 0;
-      width: 100vw;
-      height: 100vh;
-      z-index: -1;
-      overflow: hidden;
-      pointer-events: none;
+    .gallery {
+      display: flex;
+      justify-content: center;
+      gap: 20px;
+      flex-wrap: wrap;
+      margin-top: 30px;
     }
-    .petal {
-      position: absolute;
-      width: 20px;
-      height: 20px;
-      background: pink;
-      border-radius: 50%;
-      opacity: 0.5;
+    .gallery img {
+      width: 200px;
+      height: auto;
+      border-radius: 10px;
+      box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+    }
+    footer {
+      padding: 20px;
+      background: #f9f9f9;
+      text-align: center;
+      font-size: 0.9em;
+    }
+    /* Animasi bunga */
+    .flower {
+      position: fixed;
+      top: -50px;
       animation: fall 10s linear infinite;
+      opacity: 0.7;
     }
     @keyframes fall {
-      0% {
-        transform: translateY(-10vh) rotate(0deg);
-        opacity: 1;
-      }
-      100% {
-        transform: translateY(100vh) rotate(360deg);
-        opacity: 0;
-      }
+      0% { transform: translateY(0) rotate(0); }
+      100% { transform: translateY(100vh) rotate(360deg); }
     }
   </style>
 </head>
 <body>
-  <div class="background-anim" id="petals"></div>
-
   <header>
     <h1>Hafizd & Najihah</h1>
-    <p>Dengan izin Allah SWT, kami mengundang Anda untuk hadir dalam hari bahagia kami.</p>
-    <div class="countdown" id="countdown"></div>
+    <p>Minggu, 10 Agustus 2026</p>
+    <div class="countdown">
+      <div><span id="days">00</span>Hari</div>
+      <div><span id="hours">00</span>Jam</div>
+      <div><span id="minutes">00</span>Menit</div>
+      <div><span id="seconds">00</span>Detik</div>
+    </div>
+    <p>"Dan di antara tanda-tanda kekuasaan-Nya ialah Dia menciptakan untukmu pasangan hidup dari jenismu sendiri supaya kamu merasa tenteram di sampingnya." (QS. Ar-Rum: 21)</p>
   </header>
 
-  <section id="akad">
-    <h2>Akad Nikah</h2>
-    <p>Minggu, 10 Agustus 2026 pukul 08.00 WIB</p>
-  </section>
-
-  <section id="resepsi">
-    <h2Resepsi></h2>
-    <p>10 Agustus 2026 pukul 11.00 WIB - selesai</p>
-  </section>
-
-  <section id="lokasi">
+  <section class="section">
     <h2>Lokasi Acara</h2>
-    <p><a href="https://maps.app.goo.gl/WMoKzLxq9orz8e9T8" target="_blank">Lihat di Google Maps</a></p>
-    <iframe src="https://maps.google.com/maps?q=-6.200000,106.816666&z=15&output=embed"></iframe>
+    <iframe class="map" src="https://maps.google.com/maps?q=https://maps.app.goo.gl/sxuG5gY73kQ2SxyT7&t=&z=13&ie=UTF8&iwloc=&output=embed" frameborder="0" allowfullscreen></iframe>
   </section>
 
-  <section class="galeri">
+  <section class="section">
     <h2>Galeri</h2>
-    <img src="foto1.jpg" alt="Foto 1">
-    <img src="foto2.jpg" alt="Foto 2">
+    <div class="gallery">
+      <img src="foto1.jpg" alt="Foto 1">
+      <img src="foto2.jpg" alt="Foto 2">
+    </div>
   </section>
 
+  <footer>
+    <p>Dengan segala hormat, kami mengundang Bapak/Ibu/Saudara/i untuk menghadiri hari bahagia kami.</p>
+    <p>Akad Nikah: 10 Agustus 2026 pukul 08.00 WIB<br>
+    Resepsi: 10 Agustus 2026 pukul 11.00 WIB - selesai</p>
+  </footer>
+
+  <!-- Bunga animasi -->
   <script>
-    // Countdown
-    const countdownEl = document.getElementById("countdown");
-    const eventDate = new Date("2026-08-10T08:00:00").getTime();
-
-    const interval = setInterval(() => {
-      const now = new Date().getTime();
-      const distance = eventDate - now;
-
-      const days = Math.floor(distance / (1000 * 60 * 60 * 24));
-      const hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
-      const minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
-      const seconds = Math.floor((distance % (1000 * 60)) / 1000);
-
-      countdownEl.innerHTML = `Menuju hari bahagia: ${days} hari ${hours} jam ${minutes} menit ${seconds} detik`;
-
-      if (distance < 0) {
-        clearInterval(interval);
-        countdownEl.innerHTML = "Acara telah berlangsung.";
-      }
-    }, 1000);
-
-    // Animasi bunga jatuh
-    const petalsContainer = document.getElementById("petals");
-    for (let i = 0; i < 50; i++) {
-      const petal = document.createElement("div");
-      petal.classList.add("petal");
-      petal.style.left = `${Math.random() * 100}vw`;
-      petal.style.animationDelay = `${Math.random() * 10}s`;
-      petal.style.background = `hsl(${Math.random() * 360}, 70%, 80%)`;
-      petalsContainer.appendChild(petal);
+    for (let i = 0; i < 20; i++) {
+      let flower = document.createElement('div');
+      flower.className = 'flower';
+      flower.innerHTML = '💐';
+      flower.style.left = Math.random() * window.innerWidth + 'px';
+      flower.style.fontSize = (Math.random() * 24 + 24) + 'px';
+      flower.style.animationDuration = (Math.random() * 5 + 5) + 's';
+      document.body.appendChild(flower);
     }
+
+    // Countdown
+    const targetDate = new Date('2026-08-10T08:00:00').getTime();
+    const days = document.getElementById('days');
+    const hours = document.getElementById('hours');
+    const minutes = document.getElementById('minutes');
+    const seconds = document.getElementById('seconds');
+
+    setInterval(() => {
+      const now = new Date().getTime();
+      const distance = targetDate - now;
+
+      const d = Math.floor(distance / (1000 * 60 * 60 * 24));
+      const h = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+      const m = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
+      const s = Math.floor((distance % (1000 * 60)) / 1000);
+
+      days.innerText = d.toString().padStart(2, '0');
+      hours.innerText = h.toString().padStart(2, '0');
+      minutes.innerText = m.toString().padStart(2, '0');
+      seconds.innerText = s.toString().padStart(2, '0');
+    }, 1000);
   </script>
 </body>
 </html>
