@@ -217,4 +217,69 @@
   <div class="overlay" id="mainContent" style="display:none;">
     <header>
       <h1>Wedding Invitation</h1>
-      <p>With the blessing and mercy of Allah SWT, we cordially invite you to our wedding
+      <p>With the blessing and mercy of Allah SWT, we cordially invite you to our wedding celebration.</p>
+    </header>
+
+    <section class="section">
+      <h2>Muhammad Hafizd Anshari & Nur'ain Najihah</h2>
+      <p>Wedding Ceremony: Sunday, August 10, 2026 at 08:00 AM</p>
+      <p>Reception: Sunday, August 10, 2026 from 11:00 AM until end</p>
+    </section>
+
+    <section class="section">
+      <h2>Gallery</h2>
+      <div class="gallery">
+        <img src="foto1.jpg" alt="Photo 1">
+        <img src="foto2.jpg" alt="Photo 2">
+      </div>
+    </section>
+
+    <section class="section">
+      <h2>RSVP</h2>
+      <form onsubmit="event.preventDefault(); alert('Thank you for your RSVP!')">
+        <input type="text" placeholder="Your Name" required />
+        <textarea placeholder="Wishes or Prayers"></textarea>
+        <button type="submit">Send</button>
+      </form>
+    </section>
+
+    <section class="section">
+      <h2>Location</h2>
+      <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3982.441085436404!2d103.384163!3d3.4847756!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x31cf5b51f7735f13%3A0xbb761855f9ce2299!2sPadang%20Polo!5e0!3m2!1sen!2sid!4v1753096059181!5m2!1sen!2sid"></iframe>
+    </section>
+
+    <footer>
+      <p>Thank you for your love, prayers, and blessings.</p>
+      <p>&copy; 2026 Muhammad Hafizd Anshari & Nur'ain Najihah</p>
+    </footer>
+  </div>
+
+  <script>
+    function toggleMusic() {
+      const music = document.getElementById("bgMusic");
+      music.paused ? music.play() : music.pause();
+    }
+
+    function openInvitation() {
+      document.getElementById("cover").style.display = "none";
+      document.getElementById("mainContent").style.display = "block";
+      document.getElementById("bgMusic").play();
+    }
+
+    const eventDate = new Date("2026-08-10T08:00:00").getTime();
+    const countdownEl = document.getElementById("countdown");
+    setInterval(() => {
+      const now = new Date().getTime();
+      const distance = eventDate - now;
+      if (distance < 0) {
+        countdownEl.innerHTML = "The Big Day Has Arrived!";
+        return;
+      }
+      const days = Math.floor(distance / (1000 * 60 * 60 * 24));
+      const hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+      const minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
+      countdownEl.innerHTML = `${days} Days ${hours} Hours ${minutes} Minutes`;
+    }, 1000);
+  </script>
+</body>
+</html>
