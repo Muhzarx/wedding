@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Pernikahan Hafizd & Najihah</title>
+  <style>
+    @import url('https://fonts.googleapis.com/css2?family=Great+Vibes&family=Open+Sans:wght@400;600&display=swap');
+
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      scroll-behavior: smooth;
+    }
+    body {
+      font-family: 'Open Sans', sans-serif;
+      background: linear-gradient(to bottom, #f8f9fa, #fff);
+      color: #333;
+      position: relative;
+      overflow-x: hidden;
+    }
+    header {
+      text-align: center;
+      padding: 100px 20px;
+      background: rgba(255, 255, 255, 0.8);
+      position: relative;
+    }
+    header h1 {
+      font-family: 'Great Vibes', cursive;
+      font-size: 3em;
+      color: #c59fc9;
+    }
+    header p {
+      margin-top: 10px;
+      font-size: 1.1em;
+    }
+    .countdown {
+      margin-top: 40px;
+      font-size: 1.5em;
+      color: #555;
+    }
+    section {
+      padding: 60px 20px;
+      text-align: center;
+    }
+    .galeri img {
+      max-width: 200px;
+      margin: 10px;
+      border-radius: 15px;
+      box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+    }
+    iframe {
+      width: 100%;
+      max-width: 600px;
+      height: 300px;
+      border: 0;
+      border-radius: 15px;
+      margin-top: 20px;
+    }
+    .background-anim {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100vw;
+      height: 100vh;
+      z-index: -1;
+      overflow: hidden;
+      pointer-events: none;
+    }
+    .petal {
+      position: absolute;
+      width: 20px;
+      height: 20px;
+      background: pink;
+      border-radius: 50%;
+      opacity: 0.5;
+      animation: fall 10s linear infinite;
+    }
+    @keyframes fall {
+      0% {
+        transform: translateY(-10vh) rotate(0deg);
+        opacity: 1;
+      }
+      100% {
+        transform: translateY(100vh) rotate(360deg);
+        opacity: 0;
+      }
+    }
+  </style>
+</head>
+<body>
+  <div class="background-anim" id="petals"></div>
+
+  <header>
+    <h1>Hafizd & Najihah</h1>
+    <p>Dengan izin Allah SWT, kami mengundang Anda untuk hadir dalam hari bahagia kami.</p>
+    <div class="countdown" id="countdown"></div>
+  </header>
+
+  <section id="akad">
+    <h2>Akad Nikah</h2>
+    <p>Minggu, 10 Agustus 2026 pukul 08.00 WIB</p>
+  </section>
+
+  <section id="resepsi">
+    <h2Resepsi></h2>
+    <p>10 Agustus 2026 pukul 11.00 WIB - selesai</p>
+  </section>
+
+  <section id="lokasi">
+    <h2>Lokasi Acara</h2>
+    <p><a href="https://maps.app.goo.gl/WMoKzLxq9orz8e9T8" target="_blank">Lihat di Google Maps</a></p>
+    <iframe src="https://maps.google.com/maps?q=-6.200000,106.816666&z=15&output=embed"></iframe>
+  </section>
+
+  <section class="galeri">
+    <h2>Galeri</h2>
+    <img src="foto1.jpg" alt="Foto 1">
+    <img src="foto2.jpg" alt="Foto 2">
+  </section>
+
+  <script>
+    // Countdown
+    const countdownEl = document.getElementById("countdown");
+    const eventDate = new Date("2026-08-10T08:00:00").getTime();
+
+    const interval = setInterval(() => {
+      const now = new Date().getTime();
+      const distance = eventDate - now;
+
+      const days = Math.floor(distance / (1000 * 60 * 60 * 24));
+      const hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+      const minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
+      const seconds = Math.floor((distance % (1000 * 60)) / 1000);
+
+      countdownEl.innerHTML = `Menuju hari bahagia: ${days} hari ${hours} jam ${minutes} menit ${seconds} detik`;
+
+      if (distance < 0) {
+        clearInterval(interval);
+        countdownEl.innerHTML = "Acara telah berlangsung.";
+      }
+    }, 1000);
+
+    // Animasi bunga jatuh
+    const petalsContainer = document.getElementById("petals");
+    for (let i = 0; i < 50; i++) {
+      const petal = document.createElement("div");
+      petal.classList.add("petal");
+      petal.style.left = `${Math.random() * 100}vw`;
+      petal.style.animationDelay = `${Math.random() * 10}s`;
+      petal.style.background = `hsl(${Math.random() * 360}, 70%, 80%)`;
+      petalsContainer.appendChild(petal);
+    }
+  </script>
+</body>
+</html>
